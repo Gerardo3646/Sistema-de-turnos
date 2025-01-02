@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Turnos</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        .turno { font-size: 5em; color: #333; margin: 50px; }
+        button { padding: 15px 30px; font-size: 1.5em; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Turno Actual</h1>
+    <div class="turno" id="turno">1</div>
+    <button onclick="cambiarTurno(-1)">Anterior</button>
+    <button onclick="cambiarTurno(1)">Siguiente</button>
+
+    <script>
+        let turnoActual = 1;
+        const turnoDiv = document.getElementById('turno');
+
+        function cambiarTurno(delta) {
+            turnoActual += delta;
+            if (turnoActual < 1) turnoActual = 1; // Evitar números negativos
+            turnoDiv.textContent = turnoActual;
+        }
+    </script>
+</body>
+</html>
